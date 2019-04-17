@@ -4,8 +4,23 @@
 
 - [part 2(online)](https://ocw.mit.edu/resources/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/online-textbook/)
 
+---
 
-# 1. Systems
+# Table of contents
+
+- [Principles of Computer System Design: An Introduction](#principles-of-computer-system-design--an-introduction)
+- [1. Systems](#1-systems)
+  * [1.1 Systems and Complexity](#11-systems-and-complexity)
+    + [1.1.1 Common problems of systems in many fields](#111-common-problems-of-systems-in-many-fields)
+    + [1.1.2 Systems, Components, Interfaces, and Environments](#112-systems--components--interfaces--and-environments)
+    + [1.1.3 Complexity](#113-complexity)
+  * [1.2 Sources of Complexity](#12-sources-of-complexity)
+    + [1.2.1 Cascading and interacting requirements](#121-cascading-and-interacting-requirements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
+# 1 Systems
 
 ## 1.1 Systems and Complexity
 
@@ -32,7 +47,8 @@
 
 ### 1.2.1 Cascading and interacting requirements
 
-- *Principle of escalating complexity*
+- **Principle of escalating complexity**
 
-**Adding a requirement increases complexity out of proportion**
+*Adding a requirement increases complexity out of proportion*
+
 
