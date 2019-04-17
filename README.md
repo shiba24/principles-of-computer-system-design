@@ -17,8 +17,7 @@
   * [1.2 Sources of Complexity](#12-sources-of-complexity)
     + [1.2.1 Cascading and interacting requirements](#121-cascading-and-interacting-requirements)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
+---
 
 # 1 Systems
 
