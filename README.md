@@ -155,5 +155,48 @@ A primary method by which the abstract components of a computer system interact 
 
 ## 2.1 The three fundamental abstractions
 
-pp. 45
+### 2.1.1 Memory
+
+- Memory (storage) is the system component that remembers data values for use in computation,
+
+- WRITE(name, value), value <- READ(name)
+
+- A *volatile* memory is one whose mechanism of retaining information consumes energy. By connecting a volatile memory to a battery or an uninterruptible power supply, it can be made *durable*, which means that it is designed to remember for at least some specified period, known as *durability*.
+
+- A *non-volatile* memory retains its content without power supply. Non-volatile memory devices are subject to eventualdeterioration, known as *decay*.
+
+- Hardware layer memory devices READ and WRITE contiguous arrays of *bits*, usually fixed in length, known by various terms such as *bytes* (usually 8 bits), *words* (a small integer number of bytes, typically 2, 4, or 8), *lines* (several words), and *blocks* (a number of bytes, in the thousands). Whatever size, they are called *cell*.
+
+#### 2.1.1.1 Read/Write coherence and atomicity
+
+- *read/write coherence*: the result of the READ of a named cell is always the same as the most recent WRITE to that cell.
+⋅⋅⋅Performance enhancements
+⋅⋅⋅Replicated storage
+
+- *before-or-after atomicity*: the result of every READ or WRITE is as if that READ or WRITE occurred either completely before or completely after any other READ or WRITE.
+⋅⋅⋅Concurrency
+⋅⋅⋅Remote storage
+⋅⋅⋅Cell size incommensurate with value size
+⋅⋅⋅Replicated storage
+
+#### 2.1.1.2 memory latency
+
+pp. 48
+
+
+### 2.1.2 Interpreters
+
+ - Interpreters are the active elements of a computer system; they perform the actions that constitute computations.
+
+ 1. An instruction reference, which tells the interpreter where to find its next instruction
+
+ 2. A repertoire, which defines the set of actions the interpreter is prepared to perform when it retrieves an instruction from the location named by the instruction reference.
+
+ 3. An environment reference, which tells the interpreter where to find its environment, the current state on which the interpreter should perform the action of the current instruction.
+
+### 2.1.3 Communication links
+
+ - A communication link provides a way for information to move between physically separated components.
+
+ - SEND(link_name, outgoing_message_buffer), RECEIVE(link_name, incoming_message_buffer)xw
 
