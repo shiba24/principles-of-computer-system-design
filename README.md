@@ -147,4 +147,13 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
  5. 1,600 lines, 16 x 15 / 2 = 120, 2,000 lines, 4 x 3 / 2 x 5 = 30, Good - because interconnections are reduced.
 
 
+# 2. Elements of Computer System Organization
+
+Three well-defined classes: the memory, the interpreter, and the communication link.
+
+A primary method by which the abstract components of a computer system interact is *reference*, the usual way for one component to connect to another by *name*.
+
+## 2.1 The three fundamental abstractions
+
+pp. 45
 
