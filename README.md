@@ -94,4 +94,49 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
 
 *Indirection supports replaceability.*
 
+## 1.4 Computer systems are the same but different
+
+### 1.4.1 Computer systems have no nearby bounds on composition
+
+### 1.4.2 d(technology)/dt is unprecedented
+
+- **The incommensurate scaling rule**
+
+*Changing any system parameter by a factor of 10 usually requires a new design.
+
+## 1.5 Coping with complexity II
+
+### 1.5.1 Why modularity, abstraction, layering, and hierarchy aren't enough
+
+### 1.5.2 Iteration
+
+- **Design for iteration**
+
+*You won't get it right the first time, so make it easy to change.*
+⋅⋅⋅Take small steps
+⋅⋅⋅Don't rush
+⋅⋅⋅Plan for feedback
+⋅⋅⋅Study failures
+
+- **Keep digging**
+
+*Complex systems fail for complex reasons.*
+⋅⋅⋅Continue looking for other contributing or more basic causes.
+⋅⋅⋅Don't ignore unexplained behavior.
+
+### 1.5.3 Keep it simple
+
+- **Adopt sweeping simplifications**
+
+*So you can see what you are doing.*
+
+## Exercises
+
+ 1. B
+ 2. E
+ 3. False
+ 4. C
+ 5. 1,600 lines, 16 x 15 / 2 = 120, 2,000 lines, 4 x 3 / 2 x 5 = 30, Good - because interconnections are reduced.
+
+
 
