@@ -22,6 +22,14 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
     + [1.3.3 Layering](#133-layering)
     + [1.3.4 Hierarchy](#134-hierarchy)
     + [1.3.5 Putting it back together: Names make connections](#135-putting-it-back-together--names-make-connections)
+  * [1.4 Computer systems are the same but different](#14-computer-systems-are-the-same-but-different)
+    + [1.4.1 Computer systems have no nearby bounds on composition](#141-computer-systems-have-no-nearby-bounds-on-composition)
+    + [1.4.2 d(technology)/dt is unprecedented](#142-d-technology--dt-is-unprecedented)
+  * [1.5 Coping with complexity II](#15-coping-with-complexity-ii)
+    + [1.5.1 Why modularity, abstraction, layering, and hierarchy aren't enough](#151-why-modularity--abstraction--layering--and-hierarchy-aren-t-enough)
+    + [1.5.2 Iteration](#152-iteration)
+    + [1.5.3 Keep it simple](#153-keep-it-simple)
+  * [Exercises 1](#exercises-1)
 
 ---
 
@@ -130,7 +138,7 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
 
 *So you can see what you are doing.*
 
-## Exercises
+## Exercises 1
 
  1. B
  2. E
