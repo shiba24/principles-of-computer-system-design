@@ -159,7 +159,7 @@ A primary method by which the abstract components of a computer system interact 
 
 - Memory (storage) is the system component that remembers data values for use in computation,
 
-- WRITE(name, value), value <- READ(name)
+- `WRITE(name, value)`, `value <- READ(name)`
 
 - A *volatile* memory is one whose mechanism of retaining information consumes energy. By connecting a volatile memory to a battery or an uninterruptible power supply, it can be made *durable*, which means that it is designed to remember for at least some specified period, known as *durability*.
 
@@ -181,22 +181,49 @@ A primary method by which the abstract components of a computer system interact 
 
 #### 2.1.1.2 memory latency
 
-pp. 48
+- It takes time for a READ or WRITE to complete, known as *latency* or *access time*.
 
+- *Random access memory* is one for which the latency for memory cells chosen at random is approximately the same as the latency for cells chosen in the pattern best suited for that memory device.
+
+- Large-block READ and WRITE operations are sometimes relabeled GET and PUT.
+
+#### 2.1.1.3 Memory names and addresses
+
+- Conseutive integers for mapping geometric coordinates as names are called *addresses*, amd they form the *address space* of the memory device.
+
+- A memory system that accepts unconstrained names is called an *associative memory*. Assiciativity layer is abstraction of *location-addressed memory* (physical layer).
+
+- *cache* is sometimes implemented as an associative memory, either in software or hardware.
+
+#### 2.1.1.4 Exploiting the memory abstraction: RAID
+
+- RAID is an acronym for Redundant Array of Independent (Inexpensive) Disks.
+
+- A RAID system consists of a set of disk drives and a controller configured with an electrical and programming interface that is identical to the interface of a single disk drive.
+⋅⋅⋅Improved performance, by reading or writing disks concurrently
+⋅⋅⋅Improved durability, by writing information on more than one disk
 
 ### 2.1.2 Interpreters
 
- - Interpreters are the active elements of a computer system; they perform the actions that constitute computations.
+- Interpreters are the active elements of a computer system; they perform the actions that constitute computations.
 
- 1. An instruction reference, which tells the interpreter where to find its next instruction
+ 1. An *instruction reference*, which tells the interpreter where to find its next instruction
 
- 2. A repertoire, which defines the set of actions the interpreter is prepared to perform when it retrieves an instruction from the location named by the instruction reference.
+ 2. A *repertoire*, which defines the set of actions the interpreter is prepared to perform when it retrieves an instruction from the location named by the instruction reference.
 
- 3. An environment reference, which tells the interpreter where to find its environment, the current state on which the interpreter should perform the action of the current instruction.
+ 3. An *environment reference*, which tells the interpreter where to find its environment, the current state on which the interpreter should perform the action of the current instruction.
+
+- Using the environment reference to find the current environment, the interpreter retrieves from that environment the program instruction indicated in the instruction reference. Again using the environment reference, the interpreter performs the action directed by the program instruction.
+
+- Certain events, called *interrupts*, may catch the attention of the interpreter, causing it, rather than the program, to supply the next instruction.
+
+
+pp 55
+
 
 ### 2.1.3 Communication links
 
- - A communication link provides a way for information to move between physically separated components.
+- A communication link provides a way for information to move between physically separated components.
 
- - SEND(link_name, outgoing_message_buffer), RECEIVE(link_name, incoming_message_buffer)xw
+- `SEND(link_name, outgoing_message_buffer)`, `RECEIVE(link_name, incoming_message_buffer)`
 
