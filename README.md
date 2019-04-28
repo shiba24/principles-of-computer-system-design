@@ -133,20 +133,16 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
 
 *You won't get it right the first time, so make it easy to change.*
 
-   Take small steps
-
-   Don't rush
-
-   Plan for feedback
-
+   Take small steps  
+   Don't rush  
+   Plan for feedback  
    Study failures
 
 - **Keep digging**
 
 *Complex systems fail for complex reasons.*
 
-   Continue looking for other contributing or more basic causes.
-
+   Continue looking for other contributing or more basic causes.  
    Don't ignore unexplained behavior.
 
 ### 1.5.3 Keep it simple
@@ -187,13 +183,15 @@ A primary method by which the abstract components of a computer system interact 
 #### 2.1.1.1 Read/Write coherence and atomicity
 
 - *read/write coherence*: the result of the READ of a named cell is always the same as the most recent WRITE to that cell.
-   Performance enhancements
+
+   Performance enhancements  
    Replicated storage
 
 - *before-or-after atomicity*: the result of every READ or WRITE is as if that READ or WRITE occurred either completely before or completely after any other READ or WRITE.
-   Concurrency
-   Remote storage
-   Cell size incommensurate with value size
+
+   Concurrency  
+   Remote storage  
+   Cell size incommensurate with value size  
    Replicated storage
 
 #### 2.1.1.2 memory latency
@@ -218,8 +216,7 @@ A primary method by which the abstract components of a computer system interact 
 
 - A RAID system consists of a set of disk drives and a controller configured with an electrical and programming interface that is identical to the interface of a single disk drive.
 
-   Improved performance, by reading or writing disks concurrently
-
+   Improved performance, by reading or writing disks concurrently  
    Improved durability, by writing information on more than one disk
 
 ### 2.1.2 Interpreters
