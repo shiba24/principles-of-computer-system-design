@@ -252,5 +252,17 @@ A primary method by which the abstract components of a computer system interact 
 
 - `SEND(link_name, outgoing_message_buffer)`, `RECEIVE(link_name, incoming_message_buffer)`
 
-pp 59
+- The lawest layer of a system has received a message, higher layers may acquire the message by calling a `RECEIVE` interface of the lower layer, or the lower layer may "upcall" to the higher layer, in which case the interface might be b etter characterized as `DELIVER(incoming_message)`.
+
+- The *link_name* arguments of `SEND` and `RECEIVE` identify one of possibly several available communication links attached to the system.
+
+- Communication links involve more than simple copying an array of bits from one memory to another memory over a wire using `READ` and `WRITE`.
+
+- Many complications, such as unpredictable time to complete, threatening integrity of the data transfer, asynchronous operation, message not delivered.
+
+- Three-layer model that organizes communication links into systems called *networks*.
+
+## 2.2 Naming in computer systems
+
+
 
