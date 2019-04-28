@@ -39,6 +39,7 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
       - [2.1.2.1 Processors](#2121-processors)
       - [2.1.2.2 Interpreter layers](#2122-interpreter-layers)
     + [2.1.3 Communication links](#213-communication-links)
+  * [2.2 Naming in computer systems](#22-naming-in-computer-systems)
 
 ---
 
