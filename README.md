@@ -277,6 +277,19 @@ A primary method by which the abstract components of a computer system interact 
 
 - There are two ways to arrange for one object to use another as a component:
 
-   
+   create a copy of the component object and include the copy in the using object (use by *value*)  
+   choose a name for the component object and include just that name in the using object (use by *reference*). The component object is said to *export* the name.
 
+- When passing arguments to proceduresm use by value enhances modularity. But it does not easily permit two or more objects to share a component object whose value changes.
 
+- One purpose of names is to allow use by reference and thus simplify the sharing of changeable objects.
+
+- A second purpose is to allow a system designer to defer to a later time an important decision: to which object should this name refer.
+
+- Decoupling one object from another by using a name as an intermediary is know as *indirection*.
+
+- Deciding on the correspondence between a name and an object is an example of *binding*.
+
+### 2.1.1 The naming model
+
+pp 61
