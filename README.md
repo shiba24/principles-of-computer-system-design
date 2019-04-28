@@ -4,8 +4,6 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
 
 ---
 
-# Table of contents
-
 - [Principles of Computer System Design: An Introduction](#principles-of-computer-system-design--an-introduction)
 - [Table of contents](#table-of-contents)
 - [1. Systems](#1-systems)
@@ -30,6 +28,17 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
     + [1.5.2 Iteration](#152-iteration)
     + [1.5.3 Keep it simple](#153-keep-it-simple)
   * [Exercises 1](#exercises-1)
+- [2. Elements of Computer System Organization](#2-elements-of-computer-system-organization)
+  * [2.1 The three fundamental abstractions](#21-the-three-fundamental-abstractions)
+    + [2.1.1 Memory](#211-memory)
+      - [2.1.1.1 Read/Write coherence and atomicity](#2111-read-write-coherence-and-atomicity)
+      - [2.1.1.2 memory latency](#2112-memory-latency)
+      - [2.1.1.3 Memory names and addresses](#2113-memory-names-and-addresses)
+      - [2.1.1.4 Exploiting the memory abstraction: RAID](#2114-exploiting-the-memory-abstraction--raid)
+    + [2.1.2 Interpreters](#212-interpreters)
+      - [2.1.2.1 Processors](#2121-processors)
+      - [2.1.2.2 Interpreter layers](#2122-interpreter-layers)
+    + [2.1.3 Communication links](#213-communication-links)
 
 ---
 
