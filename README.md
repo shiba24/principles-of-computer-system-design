@@ -217,13 +217,31 @@ A primary method by which the abstract components of a computer system interact 
 
 - Certain events, called *interrupts*, may catch the attention of the interpreter, causing it, rather than the program, to supply the next instruction.
 
+- Multiple interpreters are usually *asynchronous*, running on separate, uncoordinated clocks.
 
-pp 55
+#### 2.1.2.1 Processors
 
+- The processor's instruction reference is a *program counter*, stored in a fast memory register inside the processor.
+
+- The repertoire of our general-purpose processor includes instructions for expressing computations such as adding two numbers `ADD`, subtracting one number from another `SUB`, comparing two numbers `CMP`, and changing the program counter to the address of another instruction `JMP`.
+
+- `LOAD` = `READ` a value from a named memory cell into a register into a register of the processor.
+
+- `STORE` = `WRITE` the value from a register into a named memory cell. These get two arguments, the name of a memory cell and the name of a processor register.
+
+#### 2.1.2.2 Interpreter layers
+
+- Interpreters are nearly always ofganized in layers.
+
+- The lowest layer is usually a hardware engine that has a fairly primitive repertoire of instructionsm and successive layers provide an increasingly rich or specialized repertoire.
+
+- A full- brown application system may involve four or five distinct layers of interpretation.
 
 ### 2.1.3 Communication links
 
 - A communication link provides a way for information to move between physically separated components.
 
 - `SEND(link_name, outgoing_message_buffer)`, `RECEIVE(link_name, incoming_message_buffer)`
+
+pp 59
 
