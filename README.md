@@ -293,4 +293,35 @@ A primary method by which the abstract components of a computer system interact 
 
 ### 2.1.1 The naming model
 
-pp 61
+- *Naming scheme* has three components: *name space* comprises an alphabet of symbols together with syntax rules that specify which names are acceptable. *name-mapping algorithm* associates some names of the name space with some values in a *universe of values*.
+
+- A name-to-value mapping is an example of *binding*.
+
+- The name-mapping algorithm *resolves* the name, discovering and returning the associated value.
+
+- The name-mapping algorithm is usually controlled by an additional parameter, known as a *context*.
+
+- value <- `RESOLVE(name, context)`
+
+- status <- `BIND(name, value, context)`
+
+- status <- `UNBIND(name, context)`
+
+- list <- `ENUMERATE(context)`
+
+- result <- `COMPARE(name1, name2)`
+
+- In practice, one encounters three frequently used name-mapping algorithms:
+
+   Table lookup  
+   Recursive lookup  
+   Multiple lookup
+
+### 2.2.2 Default and explicit content references
+
+- There are two ways to come up with a context with which to resolve the names found in an object: *default context reference* and *explicit context reference*.
+
+### 2.2.3 Path names, naming networks, and recursive name resolution
+
+pp71
+
