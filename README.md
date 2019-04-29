@@ -371,6 +371,16 @@ A primary method by which the abstract components of a computer system interact 
 
 ## 2.3 Organizing computer systems with names and layers
 
+- The typical organization of a computer system has three layers. The bottom layer consists of hardware components, such as processors, memories, and communication links. The middle layer consists of a collection of software modules, called the *operating system*, that abstract these hardware resources into a convenient *application programing interface* (API). The top layer consists of software that implements application-specific functikons, such as a word processor or Web browser.
 
-pp78
+- The exact division of labor between the hardware layer and the software layers is an engineering trade-off and debate between hardware and software designers. In principle, every software module can be implemented in hardware.
 
+- The operating system layer usually exhibits a phenomenon that we might call *layer bypass*, some features of the hardware layer pass through the OS layer.
+
+### 2.3.1 A hardware layer: The bus
+
+
+
+pp80
+
+ 
