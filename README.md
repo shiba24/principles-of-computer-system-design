@@ -5,7 +5,6 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
 ---
 
 - [Principles of Computer System Design: An Introduction](#principles-of-computer-system-design--an-introduction)
-- [Table of contents](#table-of-contents)
 - [1. Systems](#1-systems)
   * [1.1 Systems and Complexity](#11-systems-and-complexity)
     + [1.1.1 Common problems of systems in many fields](#111-common-problems-of-systems-in-many-fields)
@@ -40,6 +39,13 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
       - [2.1.2.2 Interpreter layers](#2122-interpreter-layers)
     + [2.1.3 Communication links](#213-communication-links)
   * [2.2 Naming in computer systems](#22-naming-in-computer-systems)
+    + [2.1.1 The naming model](#211-the-naming-model)
+    + [2.2.2 Default and explicit content references](#222-default-and-explicit-content-references)
+    + [2.2.3 Path names, naming networks, and recursive name resolution](#223-path-names--naming-networks--and-recursive-name-resolution)
+    + [2.2.4 Multiple lookup: searching through layered contexts](#224-multiple-lookup--searching-through-layered-contexts)
+    + [2.2.5 Comparing names](#225-comparing-names)
+    + [2.2.6 Name discovery](#226-name-discovery)
+  * [2.3 Organizing computer systems with names and layers](#23-organizing-computer-systems-with-names-and-layers)
 
 ---
 
@@ -319,9 +325,52 @@ A primary method by which the abstract components of a computer system interact 
 
 ### 2.2.2 Default and explicit content references
 
-- There are two ways to come up with a context with which to resolve the names found in an object: *default context reference* and *explicit context reference*.
+- There are two ways to come up with a context with which to resolve the names found in an object: *default context reference*, supplied by the resolver, and *explicit context reference*, supplied by the object.
 
 ### 2.2.3 Path names, naming networks, and recursive name resolution
 
-pp71
+- In *recursive name resolution*, a path name can be thought of as a name that explicitly includes a reference to the context in which it should be resolved.
+
+- Path names can also be thought of as identifying objects that are organized in what is called a *naming network*. In a naming network, contexts are treated as objects, and any context may contain a name-to-object binding for any other object, including another context.
+
+- Multiple names for the same object are known as *synonyms* or *aliases*.
+
+- The file system of a computer operating system is usually organized as a naming network, with directories acting as contexts.
+
+- Many systems have many different cross-hierarchy links, called *symbolic link*, *soft link*, *alias*, and *shortcut*.
+
+### 2.2.4 Multiple lookup: searching through layered contexts
+
+- *The idea of *multiple lookup* is to abandon the notion of a single, default context and instead resolve the name by systematically trying several different contexts.
+
+- Since a name may be bound in more than one context, multiple lookup can produce multiple resolutions, so some scheme is needed to decide which resolution to use. A common such scheme is called the *search path*, which is a specific list of contexts to be tried, in order. (like `$PATH`) Provides *user-dependent binding*.
+
+- In a set of layered contexts, the *scope* of a name is the range og layers in which the name is bound to the same object.
+
+- A name that is bound only in the outermost layer is known as a *global name*.
+
+- A *path name* is a name that carries its own explicit context, and a *search path* is a context that consists of a list of contexts.
+
+### 2.2.5 Comparing names
+
+- result <- `COMPARE(name1, name2)` is for:
+
+   Are the two names the same?  
+   Are the two names bound to the same value?  
+   If the value(s) are actually the indentifiers of storage containers, such as memory cells or disk sectors, are the contents of the storage containers the same?
+
+- The second includes recursive search to the lower layer. The third is about understanding what it means to be the "same".
+
+- In practice, systems and programming languages typically provide several `COMPARE` operations with different semantics.
+
+### 2.2.6 Name discovery
+
+- The *name discovery protocol* informs an object's prospective user of the name that the object exports: the exporter *advertises* the existence of the name, while the user *searches* for an appropriate advertisement.
+
+- Any methods of name discovery may require first discovering some other name by any methods, but the recursion must terminate somewhere.
+
+## 2.3 Organizing computer systems with names and layers
+
+
+pp78
 
