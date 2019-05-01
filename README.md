@@ -46,6 +46,10 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
     + [2.2.5 Comparing names](#225-comparing-names)
     + [2.2.6 Name discovery](#226-name-discovery)
   * [2.3 Organizing computer systems with names and layers](#23-organizing-computer-systems-with-names-and-layers)
+    + [2.3.1 A hardware layer: The bus](#231-a-hardware-layer--the-bus)
+    + [2.3.2 A software layer: The file abstraction](#232-a-software-layer--the-file-abstraction)
+  * [2.5 Case study: UNIX file system layering and naming](#25-case-study--unix-file-system-layering-and-naming)
+    + [2.5.1 Application programming interface for the UNIX file system](#251-application-programming-interface-for-the-unix-file-system)
 
 ---
 
@@ -379,8 +383,52 @@ A primary method by which the abstract components of a computer system interact 
 
 ### 2.3.1 A hardware layer: The bus
 
+- In the hardware layer, the processor module interpret programs, the random access memory modules store both programs and data, and the input/output modules implement communication links to the world outside the computer.
+
+- The various modules plug into the shared *bus*, which is a highly specialized communication link used to `SEND` messages to other modules.
+
+- Bus design has common features:
+
+   A set of wires comprising address, data, and control lines that connect to a *bus interface* on each module.  
+   A set of rules, called the *bus abstractionn protocol*, for deciding which module may sen d or receive a message at any particular time.    
+   A *broadcast link*, which means that every module attached to the bus hears every message. A field of message called the *bus address* identifies the intended recipient.
+
+- A common bus design is known as *split-transaction*. When one module wants to communicate with another, the first module uses the bus arbitration protocol on the control wires to request exclusive use of the bus for a message.
+
+- *Direct access memory*: when a processor `SEND`s a request to a disk controller to `READ`a block of data from the disk, it includesthe address of a buffer in memory as a field of the request message. Then, as data streams in from the disk, the disk controller `SEND`s it directly to the memory module, incrementing the memory address appropriately between `SEND`s.
+
+- **The principle of least astonishment**
+
+*People are part of the system. The design should match the user's experience, expectations, and mental models.*
+
+### 2.3.2 A software layer: The file abstraction
+
+- A file holds an array of bits or bytes, the number of which the application chooses. A file
+
+   Is durable.  
+   Has a name.
+
+- A typical API for the file abstraction contains call to `OPEN` a file, to `READ` and `WRITE` parts of the file, and to `CLOSE` the file.
+
+- The reason why the file API suports `OPEN` and `CLOSE` in addition to `READ` and `WRITE` is that the`OPEN` and `CLOSE` procedures mark the beginning and the end of a sequence of related `READ` and `WRITE` operations so that the file system knows which reads and writes belong together as a group.
+
+- Most recent file systems use `OPEN` and `CLOSE` to mark the beginning and end of an *atomic* action.
+
+   *before-or-after atomicity*: if one program has a file open and another program tries to open the same file, the file system can make the second program wait until the first one has closed the file.  
+   *all-or-nothing atomicity*: if the file system crashes before the application closes the file, none of the writes will be in the file when the system comes back up.
+
+## 2.5 Case study: UNIX file system layering and naming
+
+- `UNIX` operating system was developed by Bell Telephone Laboratories for the Digial Equipment Corporation PDP line of minicomputers in the late 1960s and early 1970s. Today there are many flavors of `UNIX` family:
+
+   GNU/Linux (Red Hat, Ubuntu)  
+   Darwin (Mac OS X)
+
+### 2.5.1 Application programming interface for the UNIX file system
 
 
-pp80
+Table
+
+pp92
 
  
