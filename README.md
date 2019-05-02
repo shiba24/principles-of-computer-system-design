@@ -57,6 +57,9 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
     + [2.5.4 The inode number layer](#254-the-inode-number-layer)
   * [Exercise 2](#exercise-2)
 - [3. The design of naming schemes](#3-the-design-of-naming-schemes)
+  * [3.1 Considerations in the design of naming schemes](#31-considerations-in-the-design-of-naming-schemes)
+    + [3.1.1 Modular sharing](#311-modular-sharing)
+    + [3.1.2 Metadata and name overloading](#312-metadata-and-name-overloading)
 
 ---
 
