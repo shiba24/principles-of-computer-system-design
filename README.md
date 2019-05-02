@@ -487,10 +487,24 @@ Cont from pp.96 - pp.112
 
 ## Exercise 2
 
-
-
-
-
 # 3. The design of naming schemes
+
+## 3.1 Considerations in the design of naming schemes
+
+### 3.1.1 Modular sharing
+
+- *Modular sharing* means that one can use a shared module by name without knowing the names of the modules it uses.
+
+- Keep track of contexts and using indirect references (by using file system directories as contexts) is commonplace, but it is a bit ad hoc.
+
+- Some programming languages implement *closure*, which connects each procedure definition with the naming context in which it was defined.
+
+### 3.1.2 Metadata and name overloading
+
+- *Metadata*, information that is useful to know about an object but that cannit be found inside the object itself.
+
+
+pp120
+
 
 
