@@ -1,6 +1,8 @@
 # Principles of Computer System Design: An Introduction
 
-This is outline and notes of essential parts in this [book](https://www.amazon.com/Principles-Computer-System-Design-Introduction/dp/0123749573). [part 2(online)](https://ocw.mit.edu/resources/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/online-textbook/)
+This is outline and notes of essential parts in this [book](https://www.amazon.com/Principles-Computer-System-Design-Introduction/dp/0123749573).
+
+[Part 2(online)](https://ocw.mit.edu/resources/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/online-textbook/)
 
 ---
 
@@ -50,6 +52,11 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
     + [2.3.2 A software layer: The file abstraction](#232-a-software-layer--the-file-abstraction)
   * [2.5 Case study: UNIX file system layering and naming](#25-case-study--unix-file-system-layering-and-naming)
     + [2.5.1 Application programming interface for the UNIX file system](#251-application-programming-interface-for-the-unix-file-system)
+    + [2.5.2 The block layer](#252-the-block-layer)
+    + [2.5.3 The file layer](#253-the-file-layer)
+    + [2.5.4 The inode number layer](#254-the-inode-number-layer)
+  * [Exercise 2](#exercise-2)
+- [3. The design of naming schemes](#3-the-design-of-naming-schemes)
 
 ---
 
@@ -427,8 +434,63 @@ A primary method by which the abstract components of a computer system interact 
 ### 2.5.1 Application programming interface for the UNIX file system
 
 
-Table
+| layer                    | purpose                                             |                        |
+|--------------------------|-----------------------------------------------------|------------------------|
+| Symbolic link layer      | Integrate multiple file systems with symbolic links | user-oriented          |
+| Absolute path name layer | Provide a root for the naming hierarchies           | user-oriented          |
+| Path name layer          | Organize files into naming hierarchies              | user-oriented          |
+| File name layer          | Provide human-oriented names for files              | machine-user interface |
+| Inode number layer       | Provide machine-oriented names for files            | machine-oriented       |
+| File layer               | Organize blocks into files                          | machine-oriented       |
+| Block layer              | Identify disk blocks                                | machine-oriented       |
 
-pp92
+### 2.5.2 The block layer
 
- 
+- At the bottom layer the UNIX file system names some physical device such as a magnetic disk, flash disk, or magnetic tape that can store data durably.
+
+```
+procedure BLOCK_NUMBER_TO_BLOCK(integer b) returns block
+    return device[b]
+```
+
+
+- A *block* is the smallest allocation unit of disk space, and its size is a trade-off between several goals.
+
+- *Name discovery*: The names of blocks are integers from a compact set, but the block layer must keep track of which blocks are in use and which are available for assignment.
+
+| 0          | 1           | ...                    |             |            |     | n - 1      |
+|------------|-------------|------------------------|-------------|------------|-----|------------|
+| Boot block | Super block | Bitmap for free blocks | Inode table | File block | ... | File block |
+
+### 2.5.3 The file layer
+
+- To record which blocks belong to each file (a linear array of bytes of arbitrary length), the UNIX file system creates an index node, or *inode* for short, as a container for metadata about the file.
+
+```
+structure inode
+    integer block_numbers[N]    // number of blocks that constitute the file
+    integer size                // file size in bytes
+```
+
+- A simplified name-mapping algorithm for resolving the name of a block in a file is:
+
+```
+procedure INDEX_TO_BLOCK_NUMBER(inode instance i, integer index) returns integer
+    return i.block_numbers[index]
+```
+
+### 2.5.4 The inode number layer
+
+- Instead of passing inodes themselves around, it would be more convenient to name them and pass their names around.
+
+Cont from pp.96 - pp.112
+
+## Exercise 2
+
+
+
+
+
+# 3. The design of naming schemes
+
+
