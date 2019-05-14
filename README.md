@@ -506,8 +506,51 @@ Cont from pp.96 - pp.112
 
 - *Metadata*, information that is useful to know about an object but that cannit be found inside the object itself.
 
+- It is common to discover that file names are *overloaded* with metadata that has little or nothing to do with the use of the name as a reference.
 
-pp120
+- A *fragile name* appears when it is necessary to change the name of a file that moves to a new physical location, even though the identity and content of the file have not changed.
+
+- A name is said to be *opaque* to a module if the name has no overloading that the module knows how to interpret.
+
+### 3.1.3 Addresses: Names that locate objects
+
+- An *address is the name of a physical location or of a virtual location that maps to a physical location: register numbers, physical and virtual memory addresses, processor numbers, disk sector numbers, removable media volume numbers, ...
+
+- Addresses can be used as 1. an identifier and 2. a locator (if you read the address you can assume its location directly)
+
+- *decouple modules with indirection* to hide address.
+
+### 3.1.4 Generating unique names
+
+- Name *collision*: accidentally use the same name twice
+
+- Hash, *Secure Hash Algorithm (SHA)*: generates for any size of input, an output that is 160 bits length.
+
+- Ethernet, 48-bit *Media Access Control (MAC)* address, set inti the hardware by the manufacturer.
+
+- MAC address is properly viewed only as the unique name of a specific hardware component, not of the system in which it is embedded.
+
+### 3.1.5 Intended audience and User-friendly names
+
+- Tension between user-friendly name and unique name.
+
+- Case-sensitive vs case-preserving
+
+### 3.1.6 Relative lifetimes of names, values, and bindings
+
+- A naming scheme, a name, the binding of that name to a value, and the value to which the name is bound can all have different lifetimes.
+
+- When a name outlives its binding, any user of that name that still tries to resolve it will encounter a *dangling reference*, which is a use of a previously bound name that resolves either to a not-found result or to an irrelevant value.
+
+- When an object outlives every binding of a name to it, that object becomes *orphan* or a *lost object*.
+
+-  A system that regularly loses track of objects is said to have a *storage leak*.
+
+### 3.1.7 Looking back and ahead: Names are a basic system component
+
+
+## 3.2 Case study: The Uniform Resource Locator (URL)
+
 
 
 
