@@ -60,6 +60,17 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
   * [3.1 Considerations in the design of naming schemes](#31-considerations-in-the-design-of-naming-schemes)
     + [3.1.1 Modular sharing](#311-modular-sharing)
     + [3.1.2 Metadata and name overloading](#312-metadata-and-name-overloading)
+    + [3.1.3 Addresses: Names that locate objects](#313-addresses--names-that-locate-objects)
+    + [3.1.4 Generating unique names](#314-generating-unique-names)
+    + [3.1.5 Intended audience and User-friendly names](#315-intended-audience-and-user-friendly-names)
+    + [3.1.6 Relative lifetimes of names, values, and bindings](#316-relative-lifetimes-of-names--values--and-bindings)
+    + [3.1.7 Looking back and ahead: Names are a basic system component](#317-looking-back-and-ahead--names-are-a-basic-system-component)
+  * [3.2 Case study: The Uniform Resource Locator (URL)](#32-case-study--the-uniform-resource-locator--url-)
+    + [3.2.1 Surfing as a referential experience; name discovery](#321-surfing-as-a-referential-experience--name-discovery)
+    + [3.2.2 INterpretation of the URL](#322-interpretation-of-the-url)
+    + [3.2.2 URL case sensitivity](#322-url-case-sensitivity)
+    + [3.2.4 Wrong context references for a partial URL](#324-wrong-context-references-for-a-partial-url)
+  * [3.3](#33)
 
 ---
 
@@ -589,9 +600,72 @@ Cont from pp.96 - pp.112
 
 - Trouble can arise when the object that has multiple URLs is a directory whose name is used as a context reference (relative path).
 
-## 3.3
+## 3.3 War stories: pathologies in the use of names
 
-pp138
+### 3.3.1 A name collision eliminates smiling faces
+
+- smiley.jpg of smile faces collides Smiley
+
+### 3.3.2 Fragile names from overloading, and a market solution
+
+### 3.3.3 More fragile names from overloading, with market disruption
+
+### 3.3.4 Case-sensitivity in user-friendly names
+
+### 3.3.5 Running out of telephone numbers
+
+## Exercise 3
+
+- 3.1a separately
+
+- 3.1b who created, who owns
+
+- 3.1c 
+
+- 3.2 C
+
+- 3.3a /home/bob
+
+- 3.3b 
+
+- 3.4
+
+- 3.5
+
+# 4. Enforcing modularity with clients and services
+
+- *enforced modularity* helps limit the propagation of errors from one module to another.
+
+- One example: client <- (message) -> service
+
+## 4.1 Client/service organization
+
+- Implementation errors can propagate from caller to callee and vice versa.
+
+- *Soft* modularity limits interactions of correctly implemented modules to their specified interfaces, but implementation errors can cause interactions that go outside the specified interfaces.
+
+
+### 4.1.1 From soft modularity to enforced modularity
+
+- Below is soft modularity:
+
+```
+procedure MEASURE(func)
+  start <- GET_TIME(SECONDS)
+  func()
+  end <- GET_TIME(SECONDS)
+  return end - start
+
+procedure GET_TIME(units)
+  time <- CLOCK
+  time <- CONVERT_TO_UNITS(time, units)
+  return time
+```
+
+
+
+
+pp150
 
 
 
