@@ -70,7 +70,16 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
     + [3.2.2 INterpretation of the URL](#322-interpretation-of-the-url)
     + [3.2.2 URL case sensitivity](#322-url-case-sensitivity)
     + [3.2.4 Wrong context references for a partial URL](#324-wrong-context-references-for-a-partial-url)
-  * [3.3](#33)
+  * [3.3 War stories: pathologies in the use of names](#33-war-stories--pathologies-in-the-use-of-names)
+    + [3.3.1 A name collision eliminates smiling faces](#331-a-name-collision-eliminates-smiling-faces)
+    + [3.3.2 Fragile names from overloading, and a market solution](#332-fragile-names-from-overloading--and-a-market-solution)
+    + [3.3.3 More fragile names from overloading, with market disruption](#333-more-fragile-names-from-overloading--with-market-disruption)
+    + [3.3.4 Case-sensitivity in user-friendly names](#334-case-sensitivity-in-user-friendly-names)
+    + [3.3.5 Running out of telephone numbers](#335-running-out-of-telephone-numbers)
+  * [Exercise 3](#exercise-3)
+- [4. Enforcing modularity with clients and services](#4-enforcing-modularity-with-clients-and-services)
+  * [4.1 Client/service organization](#41-client-service-organization)
+    + [4.1.1 From soft modularity to enforced modularity](#411-from-soft-modularity-to-enforced-modularity)
 
 ---
 
