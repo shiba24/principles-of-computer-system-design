@@ -551,6 +551,48 @@ Cont from pp.96 - pp.112
 
 ## 3.2 Case study: The Uniform Resource Locator (URL)
 
+- The World Wide Web is a naming network with no unique root, many different mames for the same object, and complex comtext references.
+
+### 3.2.1 Surfing as a referential experience; name discovery
+
+- The Web has two layers of naming: an upper layer that is user-friendly, and a lower layer, which is also based on character strings but mechanical.
+
+- At the upper layers, users find web page as *hyperlinks*. The former is browser's view and the latter is user's view (HyperText Markup Language):
+
+```
+<a href="http://web.pedantic.edu/Alice/www/home.html">Alice's page</a>
+```
+
+- Between the quotation is *Uniform Resource Locator, URL*, an exampla of lower naming layer.
+
+### 3.2.2 INterpretation of the URL
+
+- The name-mapping algorithm for a URL works in several steps, as follows.
+
+ 1. The browser extracts the part before the colon, considers it to be the name of a network protocol to use, and resolves that name to a protocol handler using a table-lookup context stored in the browser. In the case of `http`:
+
+ 2. The browser takes the part between the // and the following / (web.pedantic.edu) and asks the Internet Domain Name System (DNS) to resolve it. The value that DNS returns is an Internet address.
+
+ 3. The browser opens a connection to the server at that address, and sends the remaining part of the URL (/Alice/www/home.html) to the server.
+
+ 4. The server looks for a file in its file system that has that path name.
+
+ 5. If the name resolution of step 4 is successful, the server sends the file with that path name to the client. The client transforms the file into a pahe suitable for display.
+
+### 3.2.2 URL case sensitivity
+
+- Some part of a URL is case sensitive and other parts are not. The host name part, interpreted by the Internet Domain Name Service, is case-insensitive. The protocol depends on the browser. After the host name, case-sensitivity depends on the file system of the server.
+
+### 3.2.4 Wrong context references for a partial URL
+
+- When the local file system name space allows synonyms for directory names, the mapping of local file system name space to the URL name space is not unique. Thus, several different URLs can have different path names for the same object.
+
+- Trouble can arise when the object that has multiple URLs is a directory whose name is used as a context reference (relative path).
+
+## 3.3
+
+pp138
+
 
 
 
