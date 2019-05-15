@@ -656,7 +656,7 @@ Cont from pp.96 - pp.112
 
 ### 4.1.1 From soft modularity to enforced modularity
 
-- Below is soft modularity:
+- Below is soft modularity:
 
 ```
 procedure MEASURE(func)
@@ -671,11 +671,16 @@ procedure GET_TIME(units)
   return time
 ```
 
+??? >> pp152
+
+- Need for *enforced modularity*
+
+### 4.1.2 Client/service organization
+
+- One good way to enforce modularity is to limit the interactions among modules to explicit messages.
 
 
 
-pp150
-
-
+pp155
 
 
