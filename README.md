@@ -80,6 +80,7 @@ This is outline and notes of essential parts in this [book](https://www.amazon.c
 - [4. Enforcing modularity with clients and services](#4-enforcing-modularity-with-clients-and-services)
   * [4.1 Client/service organization](#41-client-service-organization)
     + [4.1.1 From soft modularity to enforced modularity](#411-from-soft-modularity-to-enforced-modularity)
+    + [4.1.2 Client/service organization](#412-client-service-organization)
 
 ---
 
